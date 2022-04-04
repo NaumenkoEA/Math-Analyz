@@ -1,0 +1,37 @@
+\documentclass[12pt, letter paper]{article}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{syntonly}%проверка на ошибки без печати
+
+\title{Интеграл по замкнутому контуру}
+\author{Науменко Евгений Анатольевич }
+\date{03.04.2022}
+
+\begin{document}
+\maketitle
+
+\section{Условие задачи}
+Вычислить интеграл 
+\[
+    \oint_C \frac{e^z}{(z-i)^2(z+2)}dz
+\]
+в следующих случаях задания контура : а) |z-i|=2 б) |z+2-i|=3
+\section{Решение}
+а) В кругу |z-i|<2 присутствует точка z = i. Выписываем функцию
+\[
+    \frac{\frac{e^z}{z+2}}{(z-i)^2}
+\]
+Т.к в области присутствует один кратный корень, то при m = 2 и a = i
+Дальше вычисляем интеграл : 
+\[\oint_C \frac{e^z}{(z-i)^2(z+2)}dz = 2\pi i(\frac{e^z}{z+2}){^\prime\bigg|_^z=i} = 2\pi i\frac{e^z(z+2)-e^z}{(z+2)^2}{^\prime\bigg|_^z=i} =
+\frac{2\pi i(i+1)}{(i+2)^2}e^i
+\]
+б) В круг {|z+2-i|<3} входят две точки i и -2. Расписываем интеграл как сумму двух инетгралов: 
+\[
+\oint_C f(z)dz = \oint_{C_1} f(z)dz+\oint_{C_2} f(z)dz
+\]
+где контуры С$_1$ и С$_2$ содержат по одной точке. Получаем:
+
+\[\oint_C \frac{e^z}{(z-i)^2(z+2)}dz = 2\pi i\frac{e^-2}{(2+i)^2}+2\pi i\frac{(i+1)}{(2+i)^2}e^i = \frac{2\pi i}{(2+i)^2}(e^-2 +(i+1)e^i)
+\]
+\end{document}
